@@ -18,12 +18,14 @@ NodeJS 8.x+ should be installed
 
 Angular CLI 7.x+ should be installed
 
-
+___
 
 Run MongoDB servive
 
+Run `npm install` to istall all packages.
+
 Run `node server` to start NodeJS server with API implemented.
 
-Run `ng serve --open` to build and start angular project
+Run `ng serve --open` to build and start angular project.
 
 
