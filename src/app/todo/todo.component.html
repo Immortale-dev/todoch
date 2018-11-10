@@ -1,0 +1,60 @@
+
+
+<div class="wrapper">
+
+    <div class="header bg-light shadow">
+
+        <div class="container">
+            <div class="row justify-content-between py-2">
+                <div class="col-md-3 justify-self-start"><h2>TODOs</h2></div>
+                <div class="col-md-3">
+                    <div class="dropdown text-right">
+                      <button *ngIf="logined" class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Hello, {{user.name}}
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <button class="dropdown-item" (click)="logout()">LogOut</button>
+                      </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="body">
+
+        <div class="container">
+
+            <div *ngIf="logined">
+                <div class="row py-4">
+
+                    <div class="col-md-12">
+                        <app-form (added)="onAdded($event)"></app-form>
+                    </div>
+
+                    <div class="col-md-12" *ngIf="!todos.length">
+                        <div class="row justify-content-center py-5">
+                            <div class="col-md-8 text-center">
+                                <h3>No TODOs</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" *ngIf="todos.length">
+                        <div class="row justify-content-center py-5">
+                            <div class="col-md-8">
+                                <div class="todos">
+                                    <app-tod (deleted)="onDelete($event)" *ngFor="let it of todos" [todo]="it"></app-tod>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

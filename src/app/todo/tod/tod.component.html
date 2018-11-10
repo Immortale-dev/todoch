@@ -1,0 +1,17 @@
+<div class="my-2 d-flex bg-light p-3" [class.done]="todo.checked">
+    <div>
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" [(ngModel)]="todo.checked" (change)="change()" class="custom-control-input" id="customCheck-{{todo._id}}">
+            <label class="custom-control-label" for="customCheck-{{todo._id}}"></label>
+        </div>
+    </div>
+    <div class="px-4 w-100">
+        <h4 class="m-0">{{todo.title}} <span class="small" [ngClass]="{'text-secondary':(todo.date <= currentDate), 'text-danger':(todo.date > currentDate)}">({{todo.date | date:'longDate'}})</span></h4>
+        <p class="m-0">{{todo.description}}</p>
+    </div>
+    <div class="d-flex align-items-center">
+        <button type="button" class="close" aria-label="Close" (click)="delete()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>

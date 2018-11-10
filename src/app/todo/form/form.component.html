@@ -1,0 +1,29 @@
+
+
+
+<div class="row justify-content-center">
+
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="form-group">
+                    <input placeholder="Title" [(ngModel)]="title" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <input placeholder="Date" [(ngModel)]="date" class="form-control" type="date">
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <textarea [(ngModel)]="description" rows="4" placeholder="Description" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-success btn-lg" (click)="add()">Add Todo</button>
+        <div class="py-3" *ngIf="errors.length">
+            <div class="alert-danger p-3" *ngFor="let it of errors">{{it}}</div>
+        </div>
+    </div>
+</div>
