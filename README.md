@@ -13,10 +13,17 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Build and Test
 
 MongoDB 4.x+ should be installed
+
 NodeJS 8.x+ should be installed
+
 Angular CLI 7.x+ should be installed
 
+
+
 Run MongoDB servive
+
 Run `node server` to start NodeJS server with API implemented.
+
 Run `ng serve --open` to build and start angular project
+
 
