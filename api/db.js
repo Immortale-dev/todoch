@@ -1,5 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectID;
+const dbname = 'todoch';
 let url = "mongodb://localhost:27017/";
 let crypto = require('crypto');
 
@@ -114,7 +115,7 @@ class DB{
     async _conn(){
         return new Promise((resolve,reject)=>{
             MongoClient.connect(url, { useNewUrlParser: true }, function(err, dbo) {
-                let db = dbo.db('todoch');
+                let db = dbo.db(dbname);
                 if (err) throw err;
 
                 resolve(db);
